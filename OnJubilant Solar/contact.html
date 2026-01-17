@@ -181,7 +181,7 @@
                             Our team will review and suggest the most suitable solar solution for you.
                         </p>
 
-                        <form id="quoteForm" action="https://formspree.io/f/xbddravl" method="POST">
+                        <form id="quoteForm" action="https://formspree.io/f/xkoooeyd" method="POST">
                             <div class="row g-3">
 
                                 <div class="col-md-6">
@@ -195,9 +195,13 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input type="text" name="mobile" class="form-control" placeholder="Mobile Number"
-                                        required>
+                                    <input type="tel" id="mobile" name="mobile" class="form-control"
+                                        placeholder="Mobile Number" maxlength="10" inputmode="numeric" required>
+                                    <small id="mobileError" style="color:red; display:none;">
+                                        Mobile number must be exactly 10 digits
+                                    </small>
                                 </div>
+
 
                                 <div class="col-md-6">
                                     <input type="text" name="city" class="form-control" placeholder="City / Location"
@@ -205,9 +209,13 @@
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input type="text" name="Pincode" class="form-control" placeholder="Pincode" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$"
-                                        required>
+                                    <input type="tel" id="pincode" name="Pincode" class="form-control"
+                                        placeholder="Pincode" maxlength="6" inputmode="numeric" required>
+                                    <small id="pincodeError" style="color:red; display:none;">
+                                        Pincode must be exactly 6 digits
+                                    </small>
                                 </div>
+
 
                                 <div class="col-md-6">
                                     <select name="property_type" class="form-select" required>
@@ -270,7 +278,9 @@
 
                         <p>
                             <i class="fa fa-map-marker-alt me-2" style="color:#fdb813;"></i>
-                            Thane West, Maharashtra
+                            FB-146, High Street Corporate Park,
+                            Kapurbawdi, Thane West,
+                            Maharashtra – 400608
                         </p>
                         <p>
                             <i class="fa fa-phone-alt me-2" style="color:#fdb813;"></i>
@@ -452,6 +462,62 @@
                 .catch(() => {
                     alert("Something went wrong. Please try again later.");
                 });
+        });
+    </script>
+
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const form = document.getElementById("quoteForm");
+            const mobile = document.getElementById("mobile");
+            const pincode = document.getElementById("pincode");
+
+            const mobileError = document.getElementById("mobileError");
+            const pincodeError = document.getElementById("pincodeError");
+
+            // Real-time mobile validation
+            mobile.addEventListener("input", function () {
+                this.value = this.value.replace(/\D/g, ""); // allow only numbers
+
+                if (this.value.length !== 10) {
+                    mobileError.style.display = "block";
+                } else {
+                    mobileError.style.display = "none";
+                }
+            });
+
+            // Real-time pincode validation
+            pincode.addEventListener("input", function () {
+                this.value = this.value.replace(/\D/g, ""); // allow only numbers
+
+                if (this.value.length !== 6) {
+                    pincodeError.style.display = "block";
+                } else {
+                    pincodeError.style.display = "none";
+                }
+            });
+
+            // Final check before submission — BLOCK SUBMIT if invalid
+            form.addEventListener("submit", function (event) {
+
+                let valid = true;
+
+                if (mobile.value.length !== 10) {
+                    mobileError.style.display = "block";
+                    valid = false;
+                }
+
+                if (pincode.value.length !== 6) {
+                    pincodeError.style.display = "block";
+                    valid = false;
+                }
+
+                if (!valid) {
+                    event.preventDefault(); // stops form submission
+                }
+            });
+
         });
     </script>
 
