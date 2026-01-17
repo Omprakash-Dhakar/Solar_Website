@@ -1,7 +1,7 @@
 /********** Template CSS **********/
 :root {
-  --solar-green: #43a047;
-  --solar-yellow: #fdb813;
+    --solar-green: #43a047;
+    --solar-yellow: #fdb813;
 }
 
 .fw-medium {
@@ -112,7 +112,7 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 10px 0;
     }
@@ -215,7 +215,7 @@
     background-size: cover;
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
+.breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
 
@@ -226,19 +226,19 @@
         max-width: 100% !important;
     }
 
-    .about-text  {
+    .about-text {
         padding-right: calc(((100% - 960px) / 2) + .75rem);
     }
 }
 
 @media (min-width: 1200px) {
-    .about-text  {
+    .about-text {
         padding-right: calc(((100% - 1140px) / 2) + .75rem);
     }
 }
 
 @media (min-width: 1400px) {
-    .about-text  {
+    .about-text {
         padding-right: calc(((100% - 1320px) / 2) + .75rem);
     }
 }
@@ -276,19 +276,19 @@
         max-width: 100% !important;
     }
 
-    .feature-text  {
+    .feature-text {
         padding-left: calc(((100% - 960px) / 2) + .75rem);
     }
 }
 
 @media (min-width: 1200px) {
-    .feature-text  {
+    .feature-text {
         padding-left: calc(((100% - 1140px) / 2) + .75rem);
     }
 }
 
 @media (min-width: 1400px) {
-    .feature-text  {
+    .feature-text {
         padding-left: calc(((100% - 1320px) / 2) + .75rem);
     }
 }
@@ -369,19 +369,19 @@
         max-width: 100% !important;
     }
 
-    .quote-text  {
+    .quote-text {
         padding-right: calc(((100% - 960px) / 2) + .75rem);
     }
 }
 
 @media (min-width: 1200px) {
-    .quote-text  {
+    .quote-text {
         padding-right: calc(((100% - 1140px) / 2) + .75rem);
     }
 }
 
 @media (min-width: 1400px) {
-    .quote-text  {
+    .quote-text {
         padding-right: calc(((100% - 1320px) / 2) + .75rem);
     }
 }
@@ -430,6 +430,7 @@
 }
 
 @media (min-width: 768px) {
+
     .testimonial-carousel::before,
     .testimonial-carousel::after {
         width: 200px;
@@ -437,6 +438,7 @@
 }
 
 @media (min-width: 992px) {
+
     .testimonial-carousel::before,
     .testimonial-carousel::after {
         width: 300px;
@@ -504,19 +506,19 @@
         max-width: 100% !important;
     }
 
-    .contact-text  {
+    .contact-text {
         padding-left: calc(((100% - 960px) / 2) + .75rem);
     }
 }
 
 @media (min-width: 1200px) {
-    .contact-text  {
+    .contact-text {
         padding-left: calc(((100% - 1140px) / 2) + .75rem);
     }
 }
 
 @media (min-width: 1400px) {
-    .contact-text  {
+    .contact-text {
         padding-left: calc(((100% - 1320px) / 2) + .75rem);
     }
 }
@@ -575,7 +577,8 @@
 }
 
 .navbar-logo {
-    height: 65px;        /* Adjust as required */
+    height: 65px;
+    /* Adjust as required */
     width: auto;
 }
 
@@ -602,22 +605,21 @@
 
 /* Accent elements */
 .section-accent {
-    background: linear-gradient(
-        135deg,
-        rgba(67,160,71,0.08),
-        rgba(253,184,19,0.10)
-    );
+    background: linear-gradient(135deg,
+            rgba(67, 160, 71, 0.08),
+            rgba(253, 184, 19, 0.10));
 }
 
 /* Icons & highlights */
 .icon-accent {
     color: var(--solar-yellow);
 }
+
 /* Popup Overlay */
 .solar-popup-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     display: none;
     align-items: center;
     justify-content: center;
@@ -632,7 +634,7 @@
     padding: 30px;
     border-radius: 14px;
     position: relative;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
     animation: popupFade 0.4s ease;
 }
 
@@ -691,21 +693,24 @@
         transform: translateY(20px);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;
     }
 }
+
 /* Brand colored service icons */
 .service-item .service-icon {
     background: linear-gradient(135deg, #43a047, #fdb813);
     color: #ffffff;
-    box-shadow: 0 8px 20px rgba(67,160,71,0.35);
+    box-shadow: 0 8px 20px rgba(67, 160, 71, 0.35);
 }
 
 .service-item .service-icon i {
     color: #ffffff;
 }
+
 /* Prevent service icon color change on hover */
 .service-item:hover .service-icon,
 .service-item:hover .service-icon i {
@@ -713,3 +718,59 @@
     color: #ffffff !important;
 }
 
+/* ===== MOBILE-FRIENDLY SOLAR POPUP ===== */
+
+.solar-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+/* Main popup box */
+.solar-popup {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    /* Prevents going off screen */
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    overflow-y: auto;
+    /* Enables internal scrolling */
+}
+
+/* Close button
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #43a047;
+    color: white;
+    border: none;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+} */
+
+/* Ensure inputs fit properly */
+.solar-popup .form-control,
+.solar-popup .form-select {
+    width: 100%;
+}
+
+/* Mobile spacing fix */
+@media (max-width: 768px) {
+    .solar-popup {
+        width: 95%;
+        padding: 15px;
+    }
+}
